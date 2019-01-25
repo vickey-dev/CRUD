@@ -32,7 +32,6 @@ app.get('/',function(req,res){ res.json({"message":"Welcome to user login"}) });
 //user login to get the deatils about him/her
 app.post('/login',function(req,res)
 {
-	console.log("----"+req.body.logemail);
 	user.findOne({email: req.body.logemail
 	},function(err,user){
 		if(err) throw  err;
@@ -58,8 +57,7 @@ app.post('/login',function(req,res)
 //to GET all the user details except password
 app.get('/users',function(req,res)
 {
-    console.log("GET /users")
-	user.find({},{password:false},function(err,user)
+  	user.find({},{password:false},function(err,user)
 	{
 		
 		res.send(user);
@@ -81,7 +79,6 @@ app.post('/user',function(req,res)
 app.delete('/user/:usersid',function(req,res)
 {    
 	var id=req.params.usersid
-	console.log(req.params.usersid)
 	user.deleteOne({
 		_id: ObjectId(id)
 	},function(err,task){
