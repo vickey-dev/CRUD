@@ -8,10 +8,8 @@ userMaster.findOne = (query)=>{
 		try{
 			userModel.findOne(query,function(err,user){
 				if(err || !user){
-					
 					return reject(err);
 				}else{
-					
 					resolve(user);
 				}
 			});
