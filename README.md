@@ -1,4 +1,4 @@
-# MongoDB api for CURD functionality
+# MongoDB api for CRUD functionality
 
 Created a simple api demonstration for login portal using node.js 
 
